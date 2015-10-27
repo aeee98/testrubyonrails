@@ -1,0 +1,33 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+<html>
+<head>
+
+  <title>Test D3</title>
+  <style type="text/css">
+  .firstchart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+</style>
+  <script type="text/javascript" src="./script/d3.js"> </script>
+
+</head>
+<body>
+  <p id="test">D3 Test 1</p>
+  <div class ="firstchart">
+  </div>
+  <script>
+  var test_values = [4,8,16,23,15,32,42];
+  alert(test_values);
+    document.getElementById('test').innerHTML="Test";
+  var x = d3.scale.linear().domain([0, d3.max(test_values)]).range([0, 0.8*window.innerWidth]);
+  alert(x);
+
+  d3.select(".firstchart").selectAll("div").data(test_values).enter().append("div").style("width", function(d) { return x(d) + "px"; }).text(function(d) { return d; });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+name	value
+a	2
+b	6
+c	13
+d	21
+e	31
+f	42
